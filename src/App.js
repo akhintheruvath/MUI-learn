@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Employee from "./Employee";
 
 function App() {
+  let [count,setCount] = useState(0);
+  const addCount = () => {
+    setCount(count+1);
+  }
+
+  let emp = [
+    {Name:'Akhin',Age:21},
+    {Name:'Vahid',Age:21},
+    {Name:'Arun',Age:23}
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={addCount}>Add</button>
+      {
+        emp.map((obj,index)=>
+          <Employee key={index} {...obj}/>
+        )
+      }
     </div>
   );
 }
