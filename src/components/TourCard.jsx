@@ -9,7 +9,7 @@ const TourCard = () => {
                 <Typography component="h4" variant="subtitle1">Immerse into the falls</Typography>
                 <Box padding={1}
                     sx={{
-                        display: flex,
+                        display: "flex",
                         alignItems: "center"
                     }}
                 >
